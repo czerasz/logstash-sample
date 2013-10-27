@@ -1,6 +1,8 @@
 # Project Info
 
-This project is a sample logstash architecture.
+This project is a sample logstash architecture which is visualised on the diagram below:
+
+![logstash architecture](https://raw.github.com/czerasz/logstash-sample/master/documentation/architecture-diagram.png "logstash architecture")
 
 # Requirements:
 
