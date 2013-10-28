@@ -41,6 +41,9 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     # Create a private network, which allows host-only access to the machine
     # using a specific IP.
     config_1.vm.network :private_network, ip: "10.0.0.10"
+
+    # Provision
+    config_1.vm.provision :shell, :path => "provision/shell/central-setup.sh"
   end
 
   config.vm.define "log-server" do |config_2|
@@ -57,5 +60,8 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     # Create a private network, which allows host-only access to the machine
     # using a specific IP.
     config_2.vm.network :private_network, ip: "10.0.0.11"
+
+    # Provision
+    config_2.vm.provision :shell, :path => "provision/shell/shipper-setup.sh"
   end
 end
