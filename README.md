@@ -20,3 +20,5 @@ This project is a sample logstash architecture which is visualised on the diagra
 
         vagrant ssh central-server
         vagrant ssh log-server
+
+- Once both machines are up and running follow [this instructions](https://github.com/czerasz/logstash-sample/blob/master/documentation/manual-setup-instructions.md) to manullay setup both machines
