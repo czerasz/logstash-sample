@@ -85,7 +85,8 @@ Add mapping for logstash indexes:
       "settings": {
         "index.query.default_field": "message",
         "index.cache.field.type": "soft",
-        "index.store.compress.stored": true
+        "index.store.compress.stored": true,
+        "index.number_of_replicas" : 0
       },
       "mappings": {
         "_default_": {
@@ -111,6 +112,18 @@ Add mapping for logstash indexes:
       }
     }'
 
+Raise the maximum number of open files a user can have.
+To raise the limit add to `/etc/security/limits.conf` the following lines:
+
+    vagrant soft nofile 32000
+    vagrant hard nofile 32000
+
+Logout and login to the system.
+Check if chages were applied:
+
+    ulimit -Sn
+
+Please refer to [this](http://www.elasticsearch.org/tutorials/too-many-open-files/) if You have problems.
 
 ## Setup Elasticsearch HQ
 
